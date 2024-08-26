@@ -73,6 +73,7 @@ header {
 }
 
 .site-title {
+	color: inherit;
 	text-decoration: none;
 	cursor: pointer;
 	border-radius: .125rem;
@@ -122,6 +123,50 @@ main {
   padding-inline: 0;
 }
 
+body:not(.home) main {
+	margin-block: calc(var(--header-height) + 3rem) 3rem;
+}
+
+body:not(.home) h1 {
+	font-size: 1.75rem;
+	margin-block-end: 2rem;
+}
+
+body:not(.home) h2 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-block: 3rem 1rem;
+}
+
+body:not(.home) h3 {
+	font-size: 1.3rem;
+	font-weight: 400;
+	margin-block: 3rem 1rem;
+}
+
+body:not(.home) main ul {
+	margin-block-start: 1rem;
+	margin-inline-start: 1em;
+}
+
+body:not(.home) main a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: var(--clr-accent);
+	display: inline-block;
+	border-radius: .125em;
+}
+
+body:not(.home) main a:where(:hover, :focus-visible) {
+	outline: .125em solid var(--clr-accent);
+	outline-offset: .125em;
+}
+
+address {
+	margin-block-start: 1rem;
+	font-style: normal;
+}
+
 section + section {
 	margin-block-start: 4rem;
 }
@@ -162,6 +207,11 @@ section.img img {
 	text-decoration: none;
 	color: inherit;
 	padding-inline: 1.25rem;
+}
+
+#social a:where(:hover, :focus-visible) {
+	outline: .125em solid var(--clr-accent);
+	outline-offset: .25em;
 }
 
 #social div span {
@@ -224,6 +274,15 @@ section.img img {
 
 #links a {
 	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: var(--clr-accent);
+	display: inline-block;
+	border-radius: .125em;
+}
+
+#links a:where(:hover, :focus-visible) {
+	outline: .125em solid var(--clr-accent);
+	outline-offset: .125em;
 }
 
 .site-footer {

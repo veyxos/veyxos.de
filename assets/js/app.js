@@ -35,6 +35,9 @@ function mail () {
       element.textContent = res
     } else if (type === 'href') {
       element.href = `mailto:${res}`
+    } else if (type === 'href+inner') {
+      element.textContent = res
+      element.href = `mailto:${res}`
     }
   }
 }
