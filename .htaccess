@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^node_modules(/.*)?$ - [R=404,L]
+RewriteRule ^.vscode(/.*)?$ - [R=404,L]
+RewriteRule ^.gitignore$ - [R=404,L]
+RewriteRule ^package.json$ - [R=404,L]
+RewriteRule ^pnpm-lock.yaml$ - [R=404,L]
+
+RewriteRule ^.well-known/host-meta(.*)$ https://social.cologne/.well-known/host-meta?resource=acct:veyxos@social.cologne [L,R=301]
+RewriteRule ^.well-known/webfinger(.*)$ https://social.cologne/.well-known/webfinger?resource=acct:veyxos@social.cologne [L,R=301]
+RewriteRule ^.well-known/nodeinfo(.*)$ https://social.cologne/.well-known/nodeinfo?resource=acct:veyxos@social.cologne [L,R=301]
