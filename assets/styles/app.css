@@ -1,0 +1,335 @@
+/* ibm-plex-mono-regular-latin */
+@font-face {
+	font-family: IBM Plex Mono;
+	font-style: normal;
+	font-weight: 400;
+	src: local("IBM Plex Mono Regular"), local("IBMPlexMono-Regular"), url(/assets/fonts/ibm-plex-mono-regular-latin.woff2) format("woff2"), url(/assets/fonts/ibm-plex-mono-regular-latin.woff) format("woff");
+	unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2212,U+2215;
+}
+
+:root {
+	--clr-accent: oklch(82.43% 0.203 124.2);
+	--clr-txt: oklch(19.14% 0.0159 124.2);
+	--clr-bg: oklch(99.11% 0.0174 124.2);
+
+	--min-padding-inline: 1.5rem;
+	--padding-inline: max(calc((100% - var(--max-width)) / 2 + var(--min-padding-inline)), var(--min-padding-inline));
+	--max-width: 1200px;
+	--header-height: 3.5rem;
+
+	font-family: IBM Plex Mono, monospace;
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--clr-txt);
+	color-scheme: light;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+::selection {
+	background-color: var(--clr-accent);
+}
+::-moz-selection {
+	background-color: var(--clr-accent);
+}
+
+.icon {
+	block-size: 1em;
+	fill: currentColor;
+}
+
+.icon[title="Externer Link"] {
+	display: inline-block;
+	rotate: -45deg;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
+	inline-size: 100%;
+	background-color: var(--clr-bg);
+}
+
+header {
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: 9;
+	block-size: var(--header-height);
+	padding-inline: var(--padding-inline);
+	display: flex;
+	align-items: center;
+	background: #fff9;
+	backdrop-filter: blur(4px);
+	filter: drop-shadow(0 4px 16px #0002);
+}
+
+.site-title {
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: .125rem;
+}
+
+.site-title:where(:hover, :focus-visible) {
+	outline: .125rem solid var(--clr-accent);
+	outline-offset: .125rem;
+}
+
+.site-title span:nth-child(1) {
+	text-decoration: underline;
+	text-decoration-color: var(--clr-accent);
+	text-decoration-thickness: .125rem;
+	text-underline-offset: .125rem;
+}
+.site-title span:nth-child(2) {
+	color: oklch(43.23% 0.018 119.56);
+}
+
+h1 {
+	font-weight: 400;
+	font-size: 1.25rem;
+	margin-block-end: 1rem;
+}
+
+p {
+	margin-block-start: 1rem;
+}
+
+a > img[alt="Externer Link"] {
+	display: inline-block;
+	rotate: -45deg;
+}
+
+main {
+	flex: 1 0 auto;
+	display: grid;
+	grid-template-columns: [full-width-start] var(--padding-inline) [content-start] 1fr [content-end] var(--padding-inline) [full-width-end];
+  grid-auto-rows: auto;
+  justify-content: start;
+  align-content: start;
+}
+
+:where(main > *) {
+  grid-column: content;
+  padding-inline: 0;
+}
+
+section + section {
+	margin-block-start: 4rem;
+}
+
+section.img {
+	display: flex;
+	border-block-end: .1875rem solid var(--clr-accent);
+	grid-column: full-width;
+}
+section.img img {
+	inline-size: 100%;
+	max-block-size: 85vh;
+	object-fit: cover;
+	object-position: center;
+}
+
+#whoami {
+	margin-block-start: 2rem;
+}
+
+#social ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	justify-content: space-between;
+}
+
+#social li {
+	list-style: none;
+}
+
+#social a {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	background-color: oklch(94.42% 0.042 124.99);
+	block-size: 5rem;
+	text-decoration: none;
+	color: inherit;
+	padding-inline: 1.25rem;
+}
+
+#social div span {
+	display: block;
+}
+
+#social .icon {
+	block-size: 2.5rem;
+	inline-size: 2.5rem;
+}
+
+#social .title {
+	font-size: 1rem;
+}
+#social .desc {
+	font-size: .8rem;
+}
+
+@media (width >= 420px) {
+	#social ul {
+		justify-content: flex-start;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	#social a {
+		--_size: 8rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: .75rem;
+		background-color: oklch(94.42% 0.042 124.99);
+		block-size: var(--_size);
+		inline-size: var(--_size);
+		text-decoration: none;
+		color: inherit;
+		padding-inline: 1.25rem;
+	}
+	
+	#social .icon {
+		block-size: 2.5rem;
+		inline-size: 2.5rem;
+	}
+	
+	#social .title {
+		font-size: 1rem;
+	}
+	#social .desc {
+		font-size: .8rem;
+	}
+}
+
+#links {
+	margin-block-end: 4rem;
+}
+
+#links li {
+	margin-inline-start: 1rem;
+}
+
+#links a {
+	color: inherit;
+}
+
+.site-footer {
+	position: relative;
+	background-color: var(--clr-txt);
+	color: var(--clr-bg);
+	padding: 1rem var(--padding-inline);
+}
+
+.site-footer::before {
+	content: '';
+	display: block;
+	position: absolute;
+	inset: 0 auto auto 0;
+	border-top: 1.6rem solid var(--clr-accent);
+	border-right: 1rem solid transparent;
+}
+
+.copyright {
+	margin-block-start: 0;
+}
+
+.footer-links {
+	font-size: .75rem;
+	margin-block-start: 1.5rem;
+}
+
+.footer-links ul {
+	display: grid;
+	justify-content: end;
+	justify-items: end;
+	grid-template: repeat(3, auto) / auto;
+}
+
+.footer-links li {
+	list-style: none;
+	display: inline-flex;
+}
+
+.footer-links li:nth-child(1) {
+	grid-area: 1 / 1 / 2 / 2;
+}
+.footer-links li:nth-child(2) {
+	grid-area: 1 / 2 / 2 / 3;
+}
+.footer-links li:nth-child(3) {
+	grid-area: 1 / 3 / 2 / 4;
+}
+
+.footer-links li + li::before {
+	content: '/';
+	padding-inline: 1em;
+}
+
+.footer-links a {
+	color: inherit;
+	text-decoration: none;
+}
+
+@media (width < 420px) {
+	.footer-links ul {
+		grid-template: auto auto / auto auto;
+	}
+	
+	.footer-links li:nth-child(1) {
+		grid-area: 1 / 1 / 2 / 3;
+	}
+
+	.footer-links li:nth-child(2)::before {
+		content: none;
+	}
+
+	.footer-links li:nth-child(2) {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+
+	.footer-links li:nth-child(3) {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+}
+
+@media (width >= 720px) {
+	main {
+		grid-template-columns: [full-width-start] var(--padding-inline) [content-start whoami-start] 3fr [whoami-end img-start] 2fr [img-end content-end] var(--padding-inline) [full-width-end];
+		padding-block-start: var(--header-height);
+	}
+
+	section.img {
+		grid-column: img;
+	}
+
+	#whoami {
+		grid-row: 1;
+		grid-column: whoami;
+		align-self: center;
+		padding-inline-end: 5rem;
+	}
+
+	.site-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding-block: 1.25rem;
+	}
+
+	.footer-links {
+		margin-block-start: 0;
+	}
+}
